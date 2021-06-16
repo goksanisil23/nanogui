@@ -16,6 +16,7 @@
 
 #include <nanogui/widget.h>
 #include <nanogui/texture.h>
+#include <map> // gisil
 
 NAMESPACE_BEGIN(nanogui)
 
@@ -248,6 +249,10 @@ public:
      * to the appropriate callback event handlers below
      */
     Screen();
+
+    // gisil
+    // get the __nanogui_screens
+    std::map<GLFWwindow *, Screen *>& GetScreens();    
 
     /// Initialize the \ref Screen
     void initialize(GLFWwindow *window, bool shutdown_glfw);

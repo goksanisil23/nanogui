@@ -644,6 +644,11 @@ void Screen::draw_contents() {
     clear();
 }
 
+// gisil
+std::map<GLFWwindow *, Screen *>& Screen::GetScreens() {
+    return __nanogui_screens;
+}
+
 void Screen::nvg_flush() {
     NVGparams *params = nvgInternalParams(m_nvg_context);
     params->renderFlush(params->userPtr);
