@@ -157,6 +157,12 @@ static EM_BOOL nanogui_emscripten_resize_callback(int eventType, const Emscripte
 }
 #endif
 
+// gisil
+std::map<GLFWwindow *, Screen *>& Screen::GetScreen() {
+    return __nanogui_screens;
+}
+
+
 Screen::Screen()
     : Widget(nullptr), m_glfw_window(nullptr), m_nvg_context(nullptr),
       m_cursor(Cursor::Arrow), m_background(0.3f, 0.3f, 0.32f, 1.f),
